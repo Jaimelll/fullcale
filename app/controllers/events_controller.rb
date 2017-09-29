@@ -2,15 +2,21 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    @events = Event.where(start: params[:start]..params[:end])
-  end
+    case current_user.id
+      when 1
+        @events = Event.where(start: params[:start]..params[:end])
+      else
+        @events = Event.where(start: params[:start]..params[:end]).where(user_id:1)
+     end
+ end
+
 
   def show
   end
 
   def new
     @event = Event.new
-      @event.estado=1
+
   end
 
   def edit
@@ -18,12 +24,23 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @event.save
+  #  @event = current_user.events.new(event_params)
+    @event.estado=1
+    @event.user_id=current_user.id
+      case current_user.id
+      when 1,2
+           @event.save
+       end
   end
 
   def update
     @event.update(event_params)
   end
+
+
+
+
+
 
   def destroy
     @event.destroy
@@ -35,6 +52,6 @@ class EventsController < ApplicationController
     end
 
     def event_params
-      params.require(:event).permit(:title, :date_range, :start, :end, :color, :estado)
+      params.require(:event).permit(:title, :date_range, :start, :end, :color, :estado, :user)
     end
 end

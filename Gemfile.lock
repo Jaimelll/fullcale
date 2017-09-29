@@ -52,6 +52,7 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.1.0)
+    cancancan (2.0.0)
     coderay (1.1.2)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -103,6 +104,7 @@ GEM
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
+    pg (0.18.4)
     puma (3.10.0)
     rack (2.0.3)
     rack-test (0.6.3)
@@ -124,7 +126,12 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
     rails_layout (1.0.41)
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (5.0.6)
       actionpack (= 5.0.6)
       activesupport (= 5.0.6)
@@ -193,14 +200,17 @@ DEPENDENCIES
   better_errors
   bootstrap-sass
   byebug
+  cancancan
   coffee-rails (~> 4.1.0)
   devise
   faker
   jbuilder (~> 2.0)
   jquery-rails
   listen (~> 3.0.5)
+  pg (~> 0.18.2)
   puma (~> 3.0)
   rails (~> 5.0.0)
+  rails_12factor (~> 0.0.3)
   rails_layout
   sass-rails (~> 5.0)
   simple_form

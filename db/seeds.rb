@@ -5,12 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-3650.times do 
-  event = Event.new
-  event.title = Faker::Book.title
-  start = Faker::Time.between(4.years.ago, Date.today + 4.years, :morning)
-  event.start = start
-  event.end = Faker::Time.between(start, start + 2.days, :evening)
-  event.color = ['black','green','red', nil].sample
-  event.save
-end
+
+User.create!(email: 'jduran@acffaa.gob.pe', password: 'jaimel', password_confirmation: 'jaimel')
+User.create!(email: 'consulta@acffaa.gob.pe', password: 'consulta', password_confirmation: 'consulta')
+User.create!(email: 'hquinones@acffaa.gob.pe', password: 'quinones', password_confirmation: 'quinones')

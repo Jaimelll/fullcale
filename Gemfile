@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+gem 'pg', '~> 0.18.2'
+gem 'cancancan'
 gem 'devise'
 gem 'rails', '~> 5.0.0'
 gem 'sqlite3'
@@ -22,6 +23,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
   gem 'rails_layout'
+end
+group :production do
+  gem 'rails_12factor', '~> 0.0.3'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
