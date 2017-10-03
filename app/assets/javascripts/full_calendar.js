@@ -8,6 +8,21 @@ initialize_calendar = function() {
         center: 'title',
         right: 'month,agendaWeek,agendaDay'
       },
+      monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+      monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+      dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+      dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
+      columnFormat: {
+      month: 'dddd',
+      week: 'dddd',
+      day: 'ddd'
+      },
+      buttonText: {
+      today: 'Hoy',
+      month: 'Mes',
+      week: 'Semana',
+      day: 'dia'
+       },
       selectable: true,
       selectHelper: true,
       editable: true,
@@ -26,7 +41,7 @@ initialize_calendar = function() {
       },
 
       eventDrop: function(event, delta, revertFunc) {
-        event_data = { 
+        event_data = {
           event: {
             id: event.id,
             start: event.start.format(),
@@ -39,7 +54,7 @@ initialize_calendar = function() {
             type: 'PATCH'
         });
       },
-      
+
       eventClick: function(event, jsEvent, view) {
         $.getScript(event.edit_url, function() {
           $('#event_date_range').val(moment(event.start).format("MM/DD/YYYY HH:mm") + ' - ' + moment(event.end).format("MM/DD/YYYY HH:mm"))
@@ -52,4 +67,3 @@ initialize_calendar = function() {
   })
 };
 $(document).on('turbolinks:load', initialize_calendar);
-
