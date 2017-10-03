@@ -22,16 +22,24 @@ class EventsController < ApplicationController
   def edit
   end
 
+
   def create
     @event = Event.new(event_params)
   #  @event = current_user.events.new(event_params)
     @event.estado=1
     @event.user_id=current_user.id
       case current_user.id
-      when 1,2
+        when 1
+           @event.color='black'
+           @event.estado=1
+           @event.save
+        when 2
+           @event.color='green'
+           @event.estado=2
            @event.save
        end
   end
+
 
   def update
     @event.update(event_params)
