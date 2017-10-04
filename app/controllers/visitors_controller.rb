@@ -1,7 +1,7 @@
 class VisitorsController < ApplicationController
 
   def index
-    if current_user.id==4 then
+    unless  current_user.categoria then
 
     redirect_to  destroy_user_session_path, method: :delete
    end
