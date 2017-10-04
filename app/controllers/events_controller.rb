@@ -2,12 +2,13 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    case current_user.id
+    case current_user.categoria
     when 1,2
         @events = Event.where(start: params[:start]..params[:end])
     when 3
         @events = Event.where(start: params[:start]..params[:end]).where(estado:1)
-     end
+
+   end
  end
 
 
@@ -28,7 +29,8 @@ class EventsController < ApplicationController
   #  @event = current_user.events.new(event_params)
 
     @event.user_id=current_user.id
-      case current_user.id
+
+      case current_user.categoria
         when 1
            @event.color='black'
            @event.estado=1
@@ -44,7 +46,7 @@ class EventsController < ApplicationController
   def update
 
 
-    case current_user.id
+    case current_user.categoria
       when 1
          @event.update(event_params)
          @event.update(color:'black',estado:1)
@@ -64,7 +66,7 @@ class EventsController < ApplicationController
 
   def destroy
 
-    case current_user.id
+    case current_user.categoria
       when 1
         @event.destroy
       when 2
