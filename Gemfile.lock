@@ -33,16 +33,20 @@ GEM
       activemodel (= 5.0.6)
       activesupport (= 5.0.6)
       arel (~> 7.0)
+    activerecord-oracle_enhanced-adapter (1.7.11)
+      activerecord (~> 5.0.0)
+      arel (~> 7.1.4)
+      ruby-plsql (>= 0.5.0)
     activesupport (5.0.6)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
-    autoprefixer-rails (7.1.4.1)
+    autoprefixer-rails (7.1.6)
       execjs
     bcrypt (3.1.11)
-    better_errors (2.3.0)
+    better_errors (2.4.0)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
@@ -69,15 +73,16 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
-    erubi (1.6.1)
+    erubi (1.7.0)
     erubis (2.7.0)
     execjs (2.7.0)
     faker (1.8.4)
       i18n (~> 0.5)
     ffi (1.9.18)
-    globalid (0.4.0)
+    globalid (0.4.1)
       activesupport (>= 4.2.0)
-    i18n (0.8.6)
+    i18n (0.9.1)
+      concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -91,12 +96,10 @@ GEM
     loofah (2.1.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.6.6)
-      mime-types (>= 1.16, < 4)
+    mail (2.7.0)
+      mini_mime (>= 0.1.1)
     method_source (0.9.0)
-    mime-types (3.1)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0521)
+    mini_mime (0.1.4)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
     multi_json (1.12.2)
@@ -138,14 +141,16 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (12.1.0)
+    rake (12.2.1)
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
-    sass (3.5.1)
+    ruby-oci8 (2.2.5)
+    ruby-plsql (0.6.0)
+    sass (3.5.3)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -177,7 +182,7 @@ GEM
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
-    tzinfo (1.2.3)
+    tzinfo (1.2.4)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
@@ -196,6 +201,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-oracle_enhanced-adapter
   better_errors
   bootstrap-sass
   byebug
@@ -211,6 +217,8 @@ DEPENDENCIES
   rails (~> 5.0.0)
   rails_12factor (~> 0.0.3)
   rails_layout
+  ruby-oci8
+  ruby-plsql
   sass-rails (~> 5.0)
   simple_form
   spring

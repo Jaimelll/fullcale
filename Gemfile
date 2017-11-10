@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'ruby-oci8'
+gem 'ruby-plsql'
+gem 'activerecord-oracle_enhanced-adapter'
+
+
 gem 'pg', '~> 0.18.2'
 gem 'cancancan'
 gem 'devise'

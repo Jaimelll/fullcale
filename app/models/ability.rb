@@ -8,8 +8,8 @@ class Ability
 
     user ||= User.new # guest user (not logged in)
 
- case user.id # a_variable is the variable we want to compare
-     when 1 #jaime
+ case user.categoria # a_variable is the variable we want to compare
+ when 1 #jaime
        can :manage, :all
       else
         can :read, :all

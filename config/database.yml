@@ -13,13 +13,13 @@ development:
 
 
 test:
-  adapter: postgresql
+  adapter: oracle_enhanced
   encoding: unicode
-  username: postgres
-  password: password
-  host: 127.0.0.1
-  port: 5432
-  database: calet
+  username: rubyacffaa
+  password: ORACLE
+  #host: 172.25.10.3
+  #port: 1521
+  database: //oracledbdes:1521/DBDES
   pool: 5
   timeout: 5000
 
